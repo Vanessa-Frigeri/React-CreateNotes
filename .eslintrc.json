@@ -1,0 +1,48 @@
+{
+  "parser": "babel-eslint",
+  "env": {
+    "browser": true,
+    "jest": true
+  },
+  "extends": ["plugin:react/recommended", "airbnb"],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 13,
+    "sourceType": "module"
+  },
+  "plugins": ["react", "jsx-a11y", "import"],
+  "rules": {
+    "no-console": "off",
+    "no-restricted-syntax": [
+        "error",
+        {
+            "selector": "CallExpression[callee.object.name='console'][callee.property.name!=/^(log|warn|error|info|trace)$/]",
+            "message": "Unexpected property on console object was called"
+        }
+    ],
+    "react/require-default-props": [0, { "forbidDefaultForRequired": false, "ignoreFunctionalComponents": false }],
+    "react/prop-types":"off",
+    "no-underscore-dangle":"off",
+    "react/no-array-index-key":"off",
+    "react/destructuring-assignment": [0, "never", { "ignoreClassFields": true }],
+    "react/jsx-filename-extension": [
+      "error",
+      {
+        "extensions": [".js", ".jsx"]
+      }
+    ],
+    "global-require": "off",
+    "import/prefer-default-export": "off",
+    "no-unused-expressions": ["error", { "allowTaggedTemplates": true }],
+    "react/prefer-stateless-function": [0, { "ignorePureComponents": true }],
+    "react/jsx-no-bind": [0, {
+      "ignoreDOMComponents": true,
+      "ignoreRefs": true,
+      "allowArrowFunctions": true,
+      "allowFunctions": true,
+      "allowBind": true
+    }]
+  }
+}
